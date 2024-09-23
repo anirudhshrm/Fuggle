@@ -1,0 +1,1604 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <nav>
+        <ul>
+          <li><a href="">Home</a></li>
+          <li><a href="">Review</a></li> 
+          <li><a href="">Contact Us</a></li>
+          <hr style="border-top-width: 5px;">
+        </ul>
+      </nav>
+</head>
+<header>
+  <nav>
+  <img src="C:\Users\LENOVO\Downloads\asssssss\1.png" height="170px" width="300px">
+          <a href="file:///C:/Users/LENOVO/OneDrive/Desktop/HTML%20FILES/INDEX.html">Home</a>
+          <a href="file:///C:/Users/LENOVO/OneDrive/Desktop/HTML%20FILES/review%20page.html">Review</a> 
+          <a href="file:///C:/Users/LENOVO/Downloads/review%20page.html">submit review</a>
+          <a href="file:///C:/Users/LENOVO/OneDrive/Desktop/HTML%20FILES/login%20ass.html">Login</a>
+          <a href="file:///C:/Users/LENOVO/Downloads/signin.html">signup</a>
+          <hr style="border-top-width: 5px;">
+  </nav>
+  </header>
+<body>
+    <button>
+  <img src="https://cdn.mos.cms.futurecdn.net/PgnLkALrRsJ5amRPTSvgt7.jpeg" alt="48 Laws of Power" height="300px" width="250px">
+    <h3>A court of Thorns and Roses</h3>
+    </button>
+   
+    <button>
+    <img src="https://the-bibliofile.com/blogimages/thehousemaid.jpg" alt="The Psychology of Money" height="300px" width="250px">  
+    <h3>The Housemaid</h3>
+    </button>
+    
+    <button>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8ExQwc2_on7lmJxGvKWkmw5DEQwLZjk6Kpg&s" alt="Intelligent Investor" height="300px" width="250px">
+    <h3>House of Flame and Shadow</h3>
+    </button>
+
+    <button>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAOBlYhQuMwqM2aDpgt_uyFla0o8-jYghHCg&s" alt="Intelligent Investor" height="300px" width="250px">
+    <h3>King of Sloth</h3>
+    </button>
+
+    <button>
+        <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/regionalbooks/n/h/d/psychology-of-money-original-imagjjyycve7rtay.jpeg?q=90&crop=false" alt="Intelligent Investor" height="300px" width="250px">
+        <h3>The psychology of Money</h3>
+        </button>
+
+</div>
+</body>
+</html> -->
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        .container {
+            display: flex;
+            height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .dashboard {
+            display: none;
+            flex-direction: column;
+            height: 100vh;
+            width: 100vw;
+            background-color: #f0f4f8;
+            overflow-y: auto;
+        }
+        .dashboard-header {
+            background-color: #3498db;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            z-index: 1;
+            height: 20px;
+            width: 20px;
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .team-box {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .team-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .task-stats {
+            font-size: 0.9em;
+            color: #666;
+        }
+        .task-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .task-list li {
+            padding: 5px 0;
+            display: flex;
+            align-items: center;
+        }
+        .bi {
+            margin-right: 10px;
+            font-size: 1.2em;
+            color: #3498db;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="dashboard" class="dashboard">
+            <div class="logo">
+                <img src="dashboard_logo.png">
+            </div>
+            <div class="dashboard-header">
+
+                <div class="logo">ARMOUR SECURITIES</div>
+
+                <h2 id="welcomeMessage"></h2>
+
+                <button onclick="logout()">Logout</button>
+            </div>
+
+            <div class="team-grid" id="teamGrid"></div>
+        </div>
+
+    </div>
+    <script>
+    
+        const teams = [{name: "Frontend Team",members: ["Akshit S.", "Daksh", "Garima", "Akshit V."],
+                tasks: [
+                    { description: "Design login page", completion: true },
+                    { description: "Implement sign-up functionality", completion: false },
+                    { description: "Create dashboard layout", completion: true },
+                    { description: "Optimize for mobile devices", completion: false },
+                    { description: "Implement user profile page", completion: false },
+                    { description: "Add form validation", completion: true },
+                    { description: "Create navigation menu", completion: true },
+                    { description: "Implement dark mode", completion: false }
+                ]
+            },
+            {
+                name: "Backend Team",
+                members: ["Aditya", "Ridhima", "Gunn", "Gauri"],
+                tasks: [
+                    { description: "Set up database schema", completion: true },
+                    { description: "Implement user authentication", completion: true },
+                    { description: "Create API endpoints", completion: false },
+                    { description: "Optimize database queries", completion: false },
+                    { description: "Implement password reset functionality", completion: true },
+                    { description: "Set up email notifications", completion: false },
+                    { description: "Implement data caching", completion: false },
+                    { description: "Create admin dashboard backend", completion: true }
+                ]
+            },
+            {
+                name: "Cybersecurity Team",
+                members: ["Hammad", "Divij", "Dipanshu", "Anirudh"],
+                tasks: [
+                    { description: "Test login functionality", completion: true },
+                    { description: "Perform security testing", completion: false },
+                    { description: "Create test cases for new features", completion: true },
+                    { description: "Conduct performance testing", completion: false },
+                    { description: "Test mobile responsiveness", completion: true },
+                    { description: "Verify API responses", completion: true },
+                    { description: "Conduct user acceptance testing", completion: false },
+                    { description: "Test cross-browser compatibility", completion: false }
+                ]
+            },
+            {
+                name: "DevOps Team",
+                members: ["Mike Tyson", "Muhammad Ali", "Andrew Tate", "Khali"],
+                tasks: [
+                    { description: "Set up CI/CD pipeline", completion: true },
+                    { description: "Configure production servers", completion: true },
+                    { description: "Implement automated backups", completion: false },
+                    { description: "Set up monitoring and alerting", completion: true },
+                    { description: "Optimize server performance", completion: false },
+                    { description: "Implement containerization", completion: true },
+                    { description: "Set up load balancing", completion: false },
+                    { description: "Conduct security audits", completion: false }
+                ]
+            }
+        ];
+
+        let currentUser = null;
+
+        function promptLogin() {
+            const username = prompt("Enter your username:");
+            const password = prompt("Enter your password:");
+            const designation = prompt("Enter your designation (admin or employee):").toLowerCase();
+
+            if (username && password && (designation === 'admin' || designation === 'employee')) {
+                currentUser = { username, designation };
+                document.getElementById('dashboard').style.display = 'block';
+                document.getElementById('welcomeMessage').textContent = Welcome, (username) ($(designation));
+                renderDashboard();
+            } else {
+                alert("Invalid input. Please try again.");
+                promptLogin();
+            }
+        }
+
+        function logout() {
+            currentUser = null;
+            document.getElementById('dashboard').style.display = 'none';
+            promptLogin();
+        }
+
+        function renderDashboard() {
+            const teamGrid = document.getElementById('teamGrid');
+            teamGrid.innerHTML = '';
+
+            teams.forEach(team => {
+                const teamBox = document.createElement('div');
+                teamBox.className = 'team-box';
+
+                const completedTasks = team.tasks.filter(task => task.completion).length;
+                const totalTasks = team.tasks.length;
+
+                teamBox.innerHTML = `
+                    <div class="team-header">
+                        <h3>${team.name}</h3>
+                        <div class="task-stats">
+                            ${completedTasks}/${totalTasks} tasks completed
+                        </div>
+                    </div>
+                    <p>Members: ${team.members.join(', ')}</p>
+                    <h4>Tasks:</h4>
+                    <ul class="task-list">
+                        ${team.tasks.map(task => `
+                            <li>
+                                <i class="bi ${task.completion ? 'bi-check-circle-fill' : 'bi-circle'}"></i>
+                                ${task.description}
+                            </li>
+                        `).join('')}
+                    </ul>
+                `;
+
+                teamGrid.appendChild(teamBox);
+            });
+        }
+        promptLogin();
+    </script>
+</body>
+</html> -->
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        .container {
+            display: flex;
+            height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .dashboard {
+            display: none;
+            flex-direction: column;
+            height: 100vh;
+            width: 100vw;
+            background-color: #f0f4f8;
+            overflow-y: auto;
+        }
+        .dashboard-header {
+            background-color: #3498db;
+            color: white;
+            padding: 25px;
+            padding-left: 120px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            z-index: 1;
+            height: 10px;
+            width: 10px;
+            /* margin-left: 50px; */
+        }
+        .logo img{
+          height: 115px;
+          width: 120px;
+          padding-top: 10px;
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .team-box {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .team-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .task-stats {
+            font-size: 0.9em;
+            color: #666;
+        }
+        .task-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .task-list li {
+            padding: 5px 0;
+            display: flex;
+            align-items: center;
+        }
+        .bi {
+            margin-right: 10px;
+            font-size: 1.2em;
+            color: #3498db;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="dashboard" class="dashboard">
+            <div class="logo">
+                <img src="C:\Users\LENOVO\Downloads\Untitled design.png" alt="Dashboard Logo">
+            </div>
+            <div class="dashboard-header">
+                <div class="logo">SENTINEL SECURITIES</div>
+                <h2 id="welcomeMessage"></h2>
+                <button onclick="logout()">Logout</button>
+            </div>
+            <div class="team-grid" id="teamGrid"></div>
+        </div>
+    </div>
+
+    <script>
+        const teams = [
+            {
+                name: "Frontend Team",
+                members: ["Akshit S.", "Daksh", "Garima", "Akshit V."],
+                tasks: [
+                    { description: "Design login page", completion: true },
+                    { description: "Implement sign-up functionality", completion: false },
+                    { description: "Create dashboard layout", completion: true },
+                    { description: "Optimize for mobile devices", completion: false },
+                    { description: "Implement user profile page", completion: false },
+                    { description: "Add form validation", completion: true },
+                    { description: "Create navigation menu", completion: true },
+                    { description: "Implement dark mode", completion: false }
+                ]
+            },
+            {
+                name: "Backend Team",
+                members: ["Aditya", "Ridhima", "Gunn", "Gauri"],
+                tasks: [
+                    { description: "Set up database schema", completion: true },
+                    { description: "Implement user authentication", completion: true },
+                    { description: "Create API endpoints", completion: false },
+                    { description: "Optimize database queries", completion: false },
+                    { description: "Implement password reset functionality", completion: true },
+                    { description: "Set up email notifications", completion: false },
+                    { description: "Implement data caching", completion: false },
+                    { description: "Create admin dashboard backend", completion: true }
+                ]
+            }
+            // Other teams...
+        ];
+
+        let currentUser = null;
+
+        function promptLogin() {
+            const username = prompt("Enter your username:");
+            const password = prompt("Enter your password:");
+            const designation = prompt("Enter your designation (admin or employee):").toLowerCase();
+
+            if (username && password && (designation === 'admin' || designation === 'employee')) {
+                currentUser = { username, designation };
+                document.getElementById('dashboard').style.display = 'block';
+                document.getElementById('welcomeMessage').textContent = `Welcome, ${username} (${designation})`;
+                renderDashboard();
+            } else {
+                alert("Invalid input. Please try again.");
+                promptLogin();
+            }
+        }
+
+        function logout() {
+            currentUser = null;
+            document.getElementById('dashboard').style.display = 'none';
+            promptLogin();
+        }
+
+        function renderDashboard() {
+            const teamGrid = document.getElementById('teamGrid');
+            teamGrid.innerHTML = '';
+
+            teams.forEach(team => {
+                const teamBox = document.createElement('div');
+                teamBox.className = 'team-box';
+
+                const completedTasks = team.tasks.filter(task => task.completion).length;
+                const totalTasks = team.tasks.length;
+
+                teamBox.innerHTML = `
+                    <div class="team-header">
+                        <h3>${team.name}</h3>
+                        <div class="task-stats">
+                            ${completedTasks}/${totalTasks} tasks completed
+                        </div>
+                    </div>
+                    <p>Members: ${team.members.join(', ')}</p>
+                    <h4>Tasks:</h4>
+                    <ul class="task-list">
+                        ${team.tasks.map(task => `
+                            <li>
+                                <i class="bi ${task.completion ? 'bi-check-circle-fill' : 'bi-circle'}"></i>
+                                ${task.description}
+                            </li>
+                        `).join('')}
+                    </ul>
+                `;
+
+                teamGrid.appendChild(teamBox);
+            });
+        }
+
+        window.onload = function() {
+            promptLogin();
+        };
+    </script>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a1a2e;
+            color: #eaeaea;
+            overflow: hidden;
+        }
+        
+        .container {
+            display: flex;
+            height: 100vh;
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+        }
+
+        .dashboard {
+            display: none;
+            flex-direction: column;
+            height: 100vh;
+            width: 100vw;
+            background-color: #222831;
+            overflow-y: auto;
+        }
+
+        .dashboard-header {
+            background-color: #393e46;
+            color: white;
+            padding: 25px;
+            padding-left: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #00adb5;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo img {
+            height: 80px;
+            width: 80px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .team-box {
+            background-color: #393e46;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .team-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .task-stats {
+            font-size: 0.9em;
+            color: #00adb5;
+        }
+
+        .task-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .task-list li {
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .task-list li .description {
+            flex: 1;
+            padding-left: 10px;
+            color: #eaeaea;
+        }
+
+        .bi {
+            margin-right: 10px;
+            font-size: 1.5em;
+            color: #00adb5;
+        }
+
+        .completed {
+            text-decoration: line-through;
+            color: #7a7a7a;
+        }
+
+        button {
+            background-color: #00adb5;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #007d84;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="dashboard" class="dashboard">
+            <div class="dashboard-header">
+                <div class="logo">
+                    <img src="C:\Users\LENOVO\Downloads\Untitled design.png" alt="Dashboard Logo">
+                </div>
+                <div class="logo">SENTINEL SECURITIES</div>
+                <h2 id="welcomeMessage"></h2>
+                <button onclick="logout()">Logout</button>
+            </div>
+            <div class="team-grid" id="teamGrid"></div>
+        </div>
+    </div>
+
+    <script>
+        const teams = [
+            {
+                name: "Frontend Team",
+                members: ["Akshit S.", "Daksh", "Garima", "Akshit V."],
+                tasks: [
+                    { description: "Design login page", completion: true },
+                    { description: "Implement sign-up functionality", completion: false },
+                    { description: "Create dashboard layout", completion: true },
+                    { description: "Optimize for mobile devices", completion: false },
+                    { description: "Implement user profile page", completion: false }
+                ]
+            },
+            {
+                name: "Backend Team",
+                members: ["Aditya", "Ridhima", "Gunn", "Gauri"],
+                tasks: [
+                    { description: "Set up database schema", completion: true },
+                    { description: "Implement user authentication", completion: true },
+                    { description: "Create API endpoints", completion: false },
+                    { description: "Optimize database queries", completion: false }
+                ]
+            }
+        ];
+
+        let currentUser = null;
+
+        function promptLogin() {
+            const username = prompt("Enter your username:");
+            const password = prompt("Enter your password:");
+            const designation = prompt("Enter your designation (admin or employee):").toLowerCase();
+
+            if (username && password && (designation === 'admin' || designation === 'employee')) {
+                currentUser = { username, designation };
+                document.getElementById('dashboard').style.display = 'block';
+                document.getElementById('welcomeMessage').textContent = `Welcome, ${username} (${designation})`;
+                renderDashboard();
+            } else {
+                alert("Invalid input. Please try again.");
+                promptLogin();
+            }
+        }
+
+        function logout() {
+            currentUser = null;
+            document.getElementById('dashboard').style.display = 'none';
+            promptLogin();
+        }
+
+        function renderDashboard() {
+            const teamGrid = document.getElementById('teamGrid');
+            teamGrid.innerHTML = '';
+
+            teams.forEach(team => {
+                const teamBox = document.createElement('div');
+                teamBox.className = 'team-box';
+
+                const completedTasks = team.tasks.filter(task => task.completion).length;
+                const totalTasks = team.tasks.length;
+
+                teamBox.innerHTML = `
+                    <div class="team-header">
+                        <h3>${team.name}</h3>
+                        <div class="task-stats">
+                            ${completedTasks}/${totalTasks} tasks completed
+                        </div>
+                    </div>
+                    <p>Members: ${team.members.join(', ')}</p>
+                    <h4>Tasks:</h4>
+                    <ul class="task-list">
+                        ${team.tasks.map((task, index) => `
+                            <li>
+                                <input type="checkbox" ${task.completion ? 'checked' : ''} onchange="toggleTaskCompletion(${teams.indexOf(team)}, ${index})">
+                                <span class="description ${task.completion ? 'completed' : ''}">
+                                    ${task.description}
+                                </span>
+                            </li>
+                        `).join('')}
+                    </ul>
+                `;
+
+                teamGrid.appendChild(teamBox);
+            });
+        }
+
+        function toggleTaskCompletion(teamIndex, taskIndex) {
+            const task = teams[teamIndex].tasks[taskIndex];
+            task.completion = !task.completion;
+            renderDashboard();
+        }
+
+        window.onload = function() {
+            promptLogin();
+        };
+    </script>
+</body>
+
+</html>
+` -->
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>काली Coffee</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3a2618;
+            --secondary-color: #d4a574;
+            --bg-color: #f5e6d3;
+            --text-color: #2c2c2c;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 1rem;
+        }
+
+        main {
+            padding-top: 80px;
+        }
+
+        .hero {
+            background-image: url('https://source.unsplash.com/1600x900/?cafe');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: black;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: black;
+        }
+
+        .cta-button {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .menu-section {
+            padding: 2rem;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .menu-item {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .menu-item-content {
+            padding: 1rem;
+        }
+
+        .menu-item h3 {
+            margin-top: 0;
+        }
+
+        .price {
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">काली Coffee</div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#menu">Menu</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Welcome to Brew & Bites</h1>
+                <p>Discover our delicious menu and cozy atmosphere</p>
+                <a href="#menu" class="cta-button">View Menu</a>
+            </div>
+        </section>
+
+        <section id="menu" class="menu-section">
+            <h2>Our Menu</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="https://static.vecteezy.com/system/resources/previews/011/048/029/original/iced-coffee-watercolor-set-free-png.png" alt="Cold Brew Coffee">
+                    <div class="menu-item-content">
+                        <h3>Cold Brew Coffee</h3>
+                        <p>Smooth and refreshing cold brew coffee</p>
+                        <span class="price">$3.99</span>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images0.westend61.de/0001399048pw/high-angle-view-of-cappuccino-on-white-background-EYF06752.jpg" alt="Cappuccino">
+                    <div class="menu-item-content">
+                        <h3>Cappuccino</h3>
+                        <p>Classic cappuccino with frothy milk</p>
+                        <span class="price">$4.49</span>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://img.freepik.com/premium-photo/delicious-toast-with-avocado-isolated-white-background_185193-27477.jpg" alt="Avocado Toast">
+                    <div class="menu-item-content">
+                        <h3>Avocado Toast</h3>
+                        <p>Creamy avocado on toasted sourdough</p>
+                        <span class="price">$7.99</span>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://bing.com/th?id=OSK.4ce7b1c9e367ce6668a8f64b9f0a7d4b" alt="Berry Smoothie">
+                    <div class="menu-item-content">
+                        <h3>Berry Smoothie</h3>
+                        <p>Fresh mixed berries blended to perfection</p>
+                        <span class="price">$5.99</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <p>Contact us: hello@brewandbites.com | (123) 456-7890</p>
+        <p>123 Coffee Street, Beantown, CT 06510</p>
+    </footer>
+</body>
+</html> -->
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Engine Interface</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Simple Search Engine Interface</h1>
+    
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Enter search query..." />
+      <button id="searchBtn">Search</button>
+    </div>
+
+    <div class="history">
+      <h2>Search History</h2>
+      <ul id="historyList"></ul>
+      <button id="clearHistoryBtn">Clear History</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fuggle</title>
+    <style>
+        body {
+            font-family: 'serif', sans-serif;
+            background-color: plum;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo {
+            font-size: 48px;
+            color: #4285f4;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #ea4335;
+        }
+
+        .logo .yellow {
+            color: #fbbc05;
+        }
+
+        .logo .green {
+            color: #34a853;
+        }
+
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            border: 1px solid oldlace;
+            border-radius: 34px;
+            box-shadow: 0px 1px 6px whitesmoke;
+            font-size: 16px;
+            outline: none;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"]:hover, input[type="text"]:focus {
+            border: 1px solid whitesmoke;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #604d0b;
+            color: whitesmoke;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        button:hover {
+            background-color: blueviolet;
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        h2 {
+            font-size: 18px;
+            color: #1942bd;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: darkcyan;
+            padding: 10px;
+            margin-bottom: 5px;
+            border-radius: 4px;
+            font-size: 14px;
+            color: whitesmoke;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .delete-button {
+            background-color: #ea5635;
+            color: #ffffff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .delete-button:hover {
+            background-color: #d93025;
+        }
+
+        /* Top right corner section */
+        .top-right {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+        }
+
+        .top-right a {
+            text-decoration: floralwhite;
+            color: #5f6368;
+        }
+
+        .top-right a:hover {
+            text-decoration: underline;
+            background-color: black;
+        }
+
+        .top-right img {
+            height: 50px;
+            width: 50px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-right">
+        <a href="#">Gmail</a>
+        <a href="#">Drive</a>
+        <a href="#">Images</a>
+        <a href="#"><img src="C:\Users\LENOVO\Downloads\resized anirudh sharma photo.jpg" alt="Profile"></a>
+    </div>
+
+    <div class="container">
+        <div class="logo">
+            f<span>u</span>g<span class="yellow">g</span>l<span class="yellow">e</span>
+        </div>
+        <br>
+        <input type="text" id="searchInput" placeholder="Search...">
+        <br>
+        <button id="searchButton">fuggle Search</button>
+
+        <h2>Search History</h2>
+        <ul id="searchHistory"></ul>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const searchInput = document.getElementById("searchInput");
+            const searchButton = document.getElementById("searchButton");
+            const searchHistoryList = document.getElementById("searchHistory");
+
+            let searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
+
+            displaySearchHistory();
+
+            searchButton.addEventListener("click", function () {
+                const searchTerm = searchInput.value.trim();
+
+                if (searchTerm) {
+                    searchHistory.push(searchTerm);
+                    localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+                    displaySearchHistory();
+                    searchInput.value = "";
+                }
+            });
+
+            function displaySearchHistory() {
+                searchHistoryList.innerHTML = "";
+                searchHistory.forEach(function (term, index) {
+                    const li = document.createElement("li");
+                    li.textContent = term;
+
+                    const deleteButton = document.createElement("button");
+                    deleteButton.textContent = "Delete";
+                    deleteButton.classList.add("delete-button");
+                    deleteButton.addEventListener("click", function () {
+                        searchHistory.splice(index, 1);
+                        localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+                        displaySearchHistory();
+                    });
+
+                    li.appendChild(deleteButton);
+                    searchHistoryList.appendChild(li);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+
+ -->
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fuggle - Simple Search Interface</title>
+    <style>
+        /* General styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: plum;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo {
+            font-size: 48px;
+            color: #4285f4;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #ea4335;
+        }
+
+        .logo .yellow {
+            color: #fbbc05;
+        }
+
+        input[type="text"] {
+            width: 80%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 34px;
+            box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+            outline: none;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"]:hover, input[type="text"]:focus {
+            border-color: #888;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #604d0b;
+            color: whitesmoke;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        button:hover {
+            background-color: blueviolet;
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        h2 {
+            font-size: 18px;
+            color: #1942bd;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: darkcyan;
+            padding: 10px;
+            margin-bottom: 5px;
+            border-radius: 4px;
+            font-size: 14px;
+            color: whitesmoke;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .delete-button {
+            background-color: #ea5635;
+            color: #ffffff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .delete-button:hover {
+            background-color: #d93025;
+        }
+
+        /* Top right corner section */
+        .top-right {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+        }
+
+        .top-right a {
+            text-decoration: none;
+            color: #5f6368;
+        }
+
+        .top-right a:hover {
+            text-decoration: underline;
+        }
+
+        .top-right img {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+     Navigation links in the top-right corner
+    <div class="top-right">
+        <a href="#">Gmail</a>
+        <a href="#">Drive</a>
+        <a href="#">Images</a>
+         Placeholder for the profile image
+        <a href="#"><img src="https://via.placeholder.com/40" alt="Profile"></a>
+    </div>
+
+    Main search interface container
+    <div class="container">
+        
+        <div class="logo">
+            f<span>u</span>g<span class="yellow">g</span>l<span class="yellow">e</span>
+        </div>
+        <br>
+        
+    
+        <input type="text" id="searchInput" placeholder="Search..." aria-label="Search Field">
+        <br>
+        
+        
+        <button id="searchButton">Search</button>
+
+        
+        <h -->
+
+
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>fuggle - Simple Search Interface</title>
+            <style>
+                /* General styling */
+                body {
+                    font-family: 'Arial', sans-serif;
+                    background-color: #f5f5f5; /* Light background */
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100vh;
+                    margin: 0;
+                }
+        
+                .container {
+                    width: 100%;
+                    max-width: 600px;
+                    text-align: center;
+                    background-color: white;
+                    padding: 20px;
+                    border-radius: 12px;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for elevation */
+                }
+        
+                .logo {
+                    font-size: 48px;
+                    color: #4285f4;
+                    font-weight: bold;
+                }
+        
+                .logo span {
+                    color: #ea4335;
+                }
+        
+                .logo .yellow {
+                    color: #fbbc05;
+                }
+        
+                .logo .green {
+                    color: #34a853;
+                }
+        
+                input[type="text"] {
+                    width: 80%;
+                    padding: 12px;
+                    border: 1px solid #ddd;
+                    border-radius: 34px;
+                    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.05);
+                    font-size: 16px;
+                    outline: none;
+                    margin-bottom: 20px;
+                }
+        
+                input[type="text"]:hover, input[type="text"]:focus {
+                    border-color: #888; /* Subtle hover/focus effect */
+                }
+        
+                button {
+                    padding: 10px 20px;
+                    border: none;
+                    background-color: #4285f4; /* Google-like blue */
+                    color: white;
+                    border-radius: 4px;
+                    font-size: 14px;
+                    cursor: pointer;
+                    margin: 10px;
+                    transition: background-color 0.3s ease;
+                }
+        
+                button:hover {
+                    background-color: #3367d6; /* Darker blue on hover */
+                }
+        
+                button:focus {
+                    outline: none;
+                }
+        
+                h2 {
+                    font-size: 18px;
+                    color: #333; /* Dark grey for headings */
+                    margin-bottom: 10px;
+                }
+        
+                ul {
+                    list-style-type: none;
+                    padding: 0;
+                }
+        
+                li {
+                    background-color: #f1f3f4; /* Light grey background */
+                    padding: 10px;
+                    margin-bottom: 5px;
+                    border-radius: 4px;
+                    font-size: 14px;
+                    color: #333;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+        
+                .delete-button {
+                    background-color: #ea5635;
+                    color: #ffffff;
+                    border: none;
+                    padding: 5px 10px;
+                    cursor: pointer;
+                    border-radius: 4px;
+                    font-size: 12px;
+                    transition: background-color 0.3s ease;
+                }
+        
+                .delete-button:hover {
+                    background-color: #d93025; /* Slightly darker delete button on hover */
+                }
+        
+                /* Top right corner section */
+                .top-right {
+                    position: absolute;
+                    top: 20px;
+                    right: 30px;
+                    display: flex;
+                    gap: 20px;
+                    font-size: 14px;
+                }
+        
+                .top-right a {
+                    text-decoration: none;
+                    color: #5f6368; /* Neutral grey for top links */
+                }
+        
+                .top-right a:hover {
+                    text-decoration: underline;
+                }
+        
+                .top-right img {
+                    height: 40px;
+                    width: 40px;
+                    border-radius: 50%;
+                }
+            </style>
+        </head>
+        <body>
+            <!-- Navigation links in the top-right corner -->
+            <div class="top-right">
+                <a href="#">Gmail</a>
+                <a href="#">Drive</a>
+                <a href="#">Images</a>
+                <!-- Placeholder for the profile image -->
+                <a href="#"><img src="https://via.placeholder.com/40" alt="Profile"></a>
+            </div>
+        
+            <!-- Main search interface container -->
+            <div class="container">
+                <!-- Branding/Logo -->
+                <div class="logo">
+                    f<span>u</span>g<span class="yellow">g</span>l<span class="green">e</span>
+                </div>
+                <br>
+                
+                <!-- Search input field -->
+                <input type="text" id="searchInput" placeholder="Search..." aria-label="Search Field">
+                <br>
+                
+                <!-- Search button -->
+                <button id="searchButton">fuggle Search</button>
+        
+                <!-- Search History section -->
+                <h2>Search History</h2>
+                <ul id="searchHistory"></ul>
+            </div>
+        
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const searchInput = document.getElementById("searchInput");
+                    const searchButton = document.getElementById("searchButton");
+                    const searchHistoryList = document.getElementById("searchHistory");
+        
+                    // Retrieve search history from local storage or initialize it if not available
+                    let searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
+        
+                    // Function to display the search history
+                    function displaySearchHistory() {
+                        // Clear the existing list
+                        searchHistoryList.innerHTML = "";
+        
+                        // Populate the list with history
+                        searchHistory.forEach((term, index) => {
+                            const li = document.createElement("li");
+                            li.textContent = term;
+        
+                            // Create the delete button for each search term
+                            const deleteButton = document.createElement("button");
+                            deleteButton.textContent = "Delete";
+                            deleteButton.classList.add("delete-button");
+        
+                            // Add event listener to delete the individual search term
+                            deleteButton.addEventListener("click", () => {
+                                searchHistory.splice(index, 1);
+                                localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+                                displaySearchHistory();
+                            });
+        
+                            // Append the delete button to the list item
+                            li.appendChild(deleteButton);
+                            searchHistoryList.appendChild(li);
+                        });
+                    }
+        
+                    // Display history when the page loads
+                    displaySearchHistory();
+        
+                    // Event listener for search button click
+                    searchButton.addEventListener("click", () => {
+                        const searchTerm = searchInput.value.trim();
+        
+                        // Add search term to history if it's valid
+                        if (searchTerm) {
+                            searchHistory.push(searchTerm);
+                            localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+                            displaySearchHistory();
+                            searchInput.value = ""; // Clear the input field after search
+                        }
+                    });
+                });
+            </script>
+        </body>
+        </html>
+        
